@@ -1,12 +1,30 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+import { HomeRoute } from "./routes/home";
+import { ProductsRoute } from "./routes/products";
+import { ProductSlugRoute } from "./routes/product-slug";
+import { RootRoute } from "./routes/root";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Hello world!</div>,
+    element: <RootRoute />,
+    children: [
+      {
+        path: "/",
+        element: <HomeRoute />,
+      },
+      {
+        path: "/products",
+        element: <ProductsRoute />,
+      },
+      {
+        path: "/products/:slug",
+        element: <ProductSlugRoute />,
+      },
+    ],
   },
 ]);
 

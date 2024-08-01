@@ -1,22 +1,33 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Product } from "@/types/product";
+import { LoaderFunctionArgs, useLoaderData } from "react-router-dom";
 
-export const ProductRoute = () => {
-  const { slug } = useParams();
-  const [product, setProduct] = useState(null);
+export async function loader({ params }: LoaderFunctionArgs) {
+  const { slug } = params;
 
-  useEffect(() => {
-    fetch(`${import.meta.env.VITE_APP_API_BASEURL}/api/products/${slug}`)
-      .then((resp) => resp.json())
-      .then((data) => {
-        setProduct(data);
-      })
-      .catch((err) => console.log(err));
-  }, [slug]);
+  try {
+    const response = await fetch(
+      `${import.meta.env.VITE_APP_API_BASEURL}/api/products/${slug}`
+    );
+    const product: Product = await response.json();
+    return { slug, product };
+  } catch (error) {
+    return { slug, product: null };
+  }
+}
+
+export function ProductRoute() {
+  const { slug, product } = useLoaderData() as Awaited<
+    ReturnType<typeof loader>
+  >;
+
+  if (!product) {
+    return <p>Product "{slug}" not found.</p>;
+  }
   return (
     <div>
-      <h1>slug: {slug}</h1>
-      <pre>{JSON.stringify(product, null, 2)}</pre>
+      <img src={product.imageUrl} alt="" />
+      <h1>name: {product.slug}</h1>
     </div>
   );
-};
+}
+ProductRoute.loader = loader;

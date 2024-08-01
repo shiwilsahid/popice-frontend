@@ -1,4 +1,4 @@
-export function ProductSlugRoute() {
+export function ProductRoute() {
   return (
     <div>
       <h1>Nama Produk</h1>

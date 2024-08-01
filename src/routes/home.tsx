@@ -1,9 +1,7 @@
 export function HomeRoute() {
   return (
     <div>
-      <h1>Home</h1>
-
-      <p>Isi halaman home</p>
+      <h1>This is home route</h1>
     </div>
   );
 }

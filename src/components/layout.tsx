@@ -1,10 +1,11 @@
 import { Link, Outlet } from "react-router-dom";
 
-export function RootRoute() {
+export const Layout = () => {
   return (
-    <div>
+    <>
       <header>
         <h1>Logo</h1>
+        <search>search</search>
         <nav>
           <ul>
             <li>
@@ -16,10 +17,12 @@ export function RootRoute() {
           </ul>
         </nav>
       </header>
-
       <main>
         <Outlet />
       </main>
-    </div>
+      <footer>
+        <p>This is footer</p>
+      </footer>
+    </>
   );
-}
+};

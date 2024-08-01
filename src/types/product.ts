@@ -5,7 +5,7 @@ export type Product = {
 
   slug: string;
   name: string;
-  imageURL: string;
+  imageUrl: string;
   price: number;
   description: string;
 

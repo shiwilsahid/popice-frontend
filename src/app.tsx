@@ -1,14 +1,6 @@
-import { Link } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./routes/router";
 
-export function App() {
-  return (
-    <div>
-      <h1>Users</h1>
-      <ul>
-        <li>
-          <Link to="/home" end />
-        </li>
-      </ul>
-    </div>
-  );
-}
+export const App = () => {
+  return <RouterProvider router={router} />;
+};

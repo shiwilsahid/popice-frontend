@@ -1,10 +1,10 @@
 import { Product } from "@/types/product";
 import { useLoaderData } from "react-router-dom";
 
-export async function loader() {
+async function loader() {
   try {
     const response = await fetch(
-      `${import.meta.env.VITE_BACKEND_API_URL}/api/products`
+      `${import.meta.env.VITE_APP_API_BASEURL}/api/products`
     );
     const products: Product[] = await response.json();
     return { products };
@@ -26,6 +26,11 @@ export function ProductsRoute() {
         {products.map((product) => {
           return (
             <li key={product.id}>
+              <img
+                src={product.imageUrl}
+                alt={product.slug}
+                className="w-52 h-52 max-w-max max-h-max"
+              />
               <h1>{product.name}</h1>
             </li>
           );
@@ -34,3 +39,4 @@ export function ProductsRoute() {
     </div>
   );
 }
+ProductsRoute.loader = loader;

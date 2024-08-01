@@ -25,8 +25,8 @@ export function ProductsRoute() {
       <ul className="grid grid-cols-4 gap-4">
         {products.map((product) => {
           return (
-            <Link to={`/products/${product.slug}`}>
-              <li key={product.id}>
+            <Link to={`/products/${product.slug}`} key={product.id}>
+              <li>
                 <img
                   src={product.imageUrl}
                   alt={product.slug}

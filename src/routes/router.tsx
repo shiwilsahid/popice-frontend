@@ -1,8 +1,8 @@
-import { Layout } from "@/components/layout";
 import { createBrowserRouter } from "react-router-dom";
 import { HomeRoute } from "./home";
 import { ProductsRoute } from "./products";
 import { ProductRoute } from "./product";
+import { Layout } from "@/components/layout/layout";
 
 export const router = createBrowserRouter([
   {

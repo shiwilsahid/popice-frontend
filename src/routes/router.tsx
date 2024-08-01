@@ -21,6 +21,7 @@ export const router = createBrowserRouter([
       {
         path: "/products/:slug",
         element: <ProductRoute />,
+        // loader: ProductRoute.loader,
       },
     ],
   },

@@ -1,5 +1,5 @@
 import { Product } from "@/types/product";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 async function loader() {
   try {
@@ -25,14 +25,16 @@ export function ProductsRoute() {
       <ul className="grid grid-cols-4 gap-4">
         {products.map((product) => {
           return (
-            <li key={product.id}>
-              <img
-                src={product.imageUrl}
-                alt={product.slug}
-                className="w-52 h-52 max-w-max max-h-max"
-              />
-              <h1>{product.name}</h1>
-            </li>
+            <Link to={`/products/${product.slug}`}>
+              <li key={product.id}>
+                <img
+                  src={product.imageUrl}
+                  alt={product.slug}
+                  className="w-52 h-52 max-w-max max-h-max"
+                />
+                <h1>{product.name}</h1>
+              </li>
+            </Link>
           );
         })}
       </ul>

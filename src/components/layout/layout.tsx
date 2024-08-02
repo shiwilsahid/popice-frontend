@@ -3,7 +3,7 @@ import { Header } from "./header";
 
 export const Layout = () => {
   return (
-    <>
+    <div className="flex min-h-screen w-full flex-col">
       <Header />
       <main>
         <Outlet />
@@ -11,6 +11,6 @@ export const Layout = () => {
       <footer>
         <p>This is footer</p>
       </footer>
-    </>
+    </div>
   );
 };

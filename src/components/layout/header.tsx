@@ -19,7 +19,7 @@ export function Header() {
         </Link>
 
         <Link
-          to="/Categories"
+          to="/categories"
           className="text-muted-foreground transition-colors hover:text-foreground"
         >
           Categories

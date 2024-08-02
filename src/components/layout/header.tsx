@@ -5,26 +5,47 @@ import { Input } from "../ui/input";
 
 export function Header() {
   return (
-    <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
-      <nav className="flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
-        <Link
-          to="/"
-          className="flex items-center gap-2 text-lg font-semibold md:text-base"
-        >
-          <img
-            src="/images/logo_popice.svg"
-            alt="logo pop ice"
-            className="h-14"
-          />
-        </Link>
-
-        <Link
-          to="/categories"
-          className="text-muted-foreground transition-colors hover:text-foreground"
-        >
-          Categories
-        </Link>
+    <header className="sticky top-0 flex items-center gap-4 border-b bg-background px-4 md:px-6">
+      <nav>
+        <ul className="flex gap-6 items-center">
+          <li>
+            <Link to="/" className="block">
+              <img
+                src="/images/logo_popice.svg"
+                alt="logo pop ice"
+                className="w-52 h-16"
+                width={200}
+                height={100}
+              />
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/"
+              className="text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/products"
+              className="text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Products
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/categories"
+              className="text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Categories
+            </Link>
+          </li>
+        </ul>
       </nav>
+
       <div className="flex w-full items-center gap-4 md:ml-auto md:gap-2 lg:gap-4">
         <form className="ml-auto flex-1 sm:flex-initial">
           <div className="relative">

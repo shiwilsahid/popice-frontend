@@ -3,6 +3,7 @@ import { HomeRoute } from "./home";
 import { ProductsRoute } from "./products";
 import { ProductRoute } from "./product";
 import { Layout } from "@/components/layout/layout";
+import { CategoriesRoute } from "./categories";
 
 export const router = createBrowserRouter([
   {
@@ -23,11 +24,11 @@ export const router = createBrowserRouter([
         element: <ProductRoute />,
         loader: ProductRoute.loader,
       },
-      // {
-      //   path: "/categories",
-      //   element: <CategoriesRoute />,
-      //   loader: CategoriesRoute.loader,
-      // },
+      {
+        path: "/categories",
+        element: <CategoriesRoute />,
+        loader: CategoriesRoute.loader,
+      },
       // {
       //   path: "/categories/:slug",
       //   element: <CategoryRoute />,

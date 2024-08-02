@@ -18,21 +18,18 @@ export function ProductsRoute() {
 
   return (
     <div>
-      <h1>Semua Produk</h1>
-
-      <p>Tampilkan semua produk</p>
-
       <ul className="grid grid-cols-4 gap-4">
-        {products.map((product) => {
+        {products.map((product: Product) => {
           return (
             <Link to={`/products/${product.slug}`} key={product.id}>
               <li>
                 <img
-                  src={product.imageUrl}
-                  alt={product.slug}
+                  src={product.imageURL}
+                  alt={product.name}
                   className="w-52 h-52 max-w-max max-h-max"
                 />
                 <h1>{product.name}</h1>
+                <p>{product.category.name}</p>
               </li>
             </Link>
           );

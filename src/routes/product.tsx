@@ -25,8 +25,8 @@ export function ProductRoute() {
   }
   return (
     <div>
-      <img src={product.imageUrl} alt="" />
-      <h1>name: {product.slug}</h1>
+      <img src={product.imageURL} alt="" />
+      <h1>{product.name}</h1>
     </div>
   );
 }

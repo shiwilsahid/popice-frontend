@@ -12,7 +12,7 @@ export function Header() {
           className="flex items-center gap-2 text-lg font-semibold md:text-base"
         >
           <img
-            src="/public/logo_popice.svg"
+            src="/images/logo_popice.svg"
             alt="logo pop ice"
             className="h-14"
           />

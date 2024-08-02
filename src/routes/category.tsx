@@ -6,7 +6,7 @@ export async function loader({ params }: LoaderFunctionArgs) {
 
   try {
     const response = await fetch(
-      `${import.meta.env.VITE_APP_API_BASEURL}/api/categories/${slug}`
+      `${import.meta.env.VITE_API_URL}/api/categories/${slug}`
     );
 
     const product: Product[] = await response.json();

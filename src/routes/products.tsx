@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 async function loader() {
   try {
     const response = await fetch(
-      `${import.meta.env.VITE_APP_API_BASEURL}/api/products`
+      `${import.meta.env.VITE_API_URL}/api/products`
     );
     const products: Product[] = await response.json();
     return { products };

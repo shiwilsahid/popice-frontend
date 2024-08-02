@@ -4,7 +4,7 @@ import { Link, useLoaderData } from "react-router-dom";
 async function loader() {
   try {
     const response = await fetch(
-      `${import.meta.env.VITE_APP_API_BASEURL}/api/categories`
+      `${import.meta.env.VITE_API_URL}/api/categories`
     );
     const categories: Category[] = await response.json();
     return { categories };

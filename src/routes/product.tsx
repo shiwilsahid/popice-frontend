@@ -8,6 +8,7 @@ export async function loader({ params }: LoaderFunctionArgs) {
     const response = await fetch(
       `${import.meta.env.VITE_APP_API_BASEURL}/api/products/${slug}`
     );
+
     const product: Product = await response.json();
     return { slug, product };
   } catch (error) {

@@ -4,6 +4,7 @@ import { ProductsRoute } from "./products";
 import { ProductRoute } from "./product";
 import { Layout } from "@/components/layout/layout";
 import { CategoriesRoute } from "./categories";
+import { CategoryProductsRoute } from "./category";
 
 export const router = createBrowserRouter([
   {
@@ -29,11 +30,11 @@ export const router = createBrowserRouter([
         element: <CategoriesRoute />,
         loader: CategoriesRoute.loader,
       },
-      // {
-      //   path: "/categories/:slug",
-      //   element: <CategoryRoute />,
-      //   loader: CategoryRoute.loader,
-      // },
+      {
+        path: "/categories/:slug",
+        element: <CategoryProductsRoute />,
+        loader: CategoryProductsRoute.loader,
+      },
     ],
   },
 ]);

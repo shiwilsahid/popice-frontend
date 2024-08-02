@@ -14,6 +14,7 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <HomeRoute />,
+        loader: HomeRoute.loader,
       },
       {
         path: "/products",

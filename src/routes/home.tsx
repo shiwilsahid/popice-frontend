@@ -1,11 +1,5 @@
 import { Link } from "react-router-dom";
 
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
-
 export function HomeRoute() {
   return (
     <div>
@@ -14,34 +8,12 @@ export function HomeRoute() {
       <Link to="/categories"> Main Category </Link>
 
       <div>
-        <Carousel>
-          <CarouselContent className="-ml-4">
-            <CarouselItem className="pl-4">
-              <img
-                src="https://www.forisa.co.id/images/product/PopIce_Active.png"
-                alt="Active Category"
-              />
-            </CarouselItem>
-            <CarouselItem className="pl-4">
-              <img
-                src="https://www.forisa.co.id/images/product/PopIce_Fushion.png "
-                alt="Fusion Category"
-              />
-            </CarouselItem>
-            <CarouselItem className="pl-4">
-              <img
-                src="https://www.forisa.co.id/images/product/PopIce_Fruit.png"
-                alt="Fruit Category"
-              />
-            </CarouselItem>
-            <CarouselItem className="pl-4">
-              <img
-                src="https://www.forisa.co.id/images/product/PopIce_Chocolate.png"
-                alt="Chocolate Category"
-              />
-            </CarouselItem>
-          </CarouselContent>
-        </Carousel>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima illo
+          unde porro nobis, nisi reprehenderit quisquam rerum inventore expedita
+          molestias placeat quia explicabo assumenda nulla consequuntur dolorem
+          possimus voluptate! Itaque!
+        </p>
       </div>
     </div>
   );
